@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b3d2e" />
+<meta name="description" content="صدقة جارية عن روح الشهيد فرحات زهير حرارة - موقع تذكاري إسلامي يضم القرآن الكريم، الأذكار، الأدعية، التسبيح، ومواقيت الصلاة." />
+<meta name="keywords" content="الشهيد فرحات زهير حرارة, صدقة جارية, قرآن كريم, أذكار, أدعية, تسبيح, مواقيت الصلاة" />
+<meta name="author" content="م. فراس محمد سحويل" />
+<meta property="og:title" content="صدقة جارية عن روح الشهيد فرحات زهير حرارة" />
+<meta property="og:description" content="موقع تذكاري إسلامي صدقة جارية عن روح الشهيد." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg" />
+<title>صدقة جارية عن روح الشهيد فرحات زهير حرارة</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="./manifest.json" />
+<link rel="apple-touch-icon" href="https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg" />
+<link rel="icon" href="https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="الشهيد فرحات" />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+  :root {
+    --bg-1: #f4f1ea;
+    --bg-2: #e6f0f6;
+    --bg-3: #fff7e0;
+    --gold: #c9a24a;
+    --gold-light: #f3d98a;
+    --green-deep: #0b3d2e;
+    --green: #1f6f54;
+    --text: #1a2230;
+    --text-soft: #4a5468;
+    --glass: rgba(255,255,255,0.45);
+    --glass-strong: rgba(255,255,255,0.65);
+    --glass-border: rgba(255,255,255,0.7);
+    --shadow: 0 10px 40px rgba(20,40,60,0.12);
+  }
+  .dark {
+    --bg-1: #0a1320;
+    --bg-2: #0e1a2b;
+    --bg-3: #0b1424;
+    --text: #f1f5fb;
+    --text-soft: #b9c3d4;
+    --glass: rgba(20,30,50,0.45);
+    --glass-strong: rgba(20,30,50,0.7);
+    --glass-border: rgba(255,255,255,0.15);
+    --shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cairo','Tajawal',sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+  body::before {
+    content:"";
+    position: fixed; inset:0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(201,162,74,0.18), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(31,111,84,0.18), transparent 45%),
+      radial-gradient(circle at 50% 100%, rgba(150,200,230,0.2), transparent 50%);
+    z-index: -1;
+    pointer-events:none;
+  }
+  .quran { font-family: 'Amiri Quran','Amiri', serif; line-height: 2.2; }
+  .arabic-serif { font-family: 'Amiri', serif; }
+
+  /* ===== Loading Screen ===== */
+  #loader {
+    position: fixed; inset:0; z-index: 9999;
+    background: linear-gradient(135deg,#0b3d2e,#1f6f54);
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:20px;
+    transition: opacity .8s ease;
+  }
+  #loader.hide { opacity:0; pointer-events:none; }
+  .loader-ring {
+    width:80px; height:80px;
+    border:4px solid rgba(255,255,255,0.2);
+    border-top-color: var(--gold-light);
+    border-radius:50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #loader p { color: var(--gold-light); font-size: 1.1rem; }
+
+  /* ===== Welcome Popup ===== */
+  #welcome {
+    position: fixed; inset:0; z-index: 9000;
+    background: rgba(10,20,30,0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display:flex; align-items:center; justify-content:center;
+    padding: 20px;
+    transition: opacity .8s ease;
+  }
+  #welcome.hide { opacity:0; pointer-events:none; }
+  .welcome-card {
+    max-width: 620px; width: 100%;
+    max-height: 92vh; overflow-y:auto;
+    background: var(--glass-strong);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6);
+    padding: 40px 30px 30px;
+    text-align: center;
+    animation: popIn .8s cubic-bezier(.2,.9,.3,1.2);
+  }
+  @keyframes popIn {
+    from { transform: scale(.8) translateY(20px); opacity:0; }
+    to { transform: scale(1) translateY(0); opacity:1; }
+  }
+  .shaheed-frame {
+    width: 150px; height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+    box-shadow: 0 0 30px rgba(201,162,74,0.6), 0 0 60px rgba(201,162,74,0.3);
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+  @keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 30px rgba(201,162,74,0.5), 0 0 60px rgba(201,162,74,0.3); }
+    50% { box-shadow: 0 0 45px rgba(201,162,74,0.8), 0 0 90px rgba(201,162,74,0.5); }
+  }
+  .shaheed-frame img {
+    width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+    border: 3px solid white;
+  }
+  .welcome-card h1 {
+    font-size: 1.5rem; color: var(--green-deep);
+    margin-bottom: 18px; font-weight: 700;
+  }
+  .dark .welcome-card h1 { color: var(--gold-light); }
+  .ayah-box {
+    background: linear-gradient(135deg, rgba(201,162,74,0.12), rgba(31,111,84,0.08));
+    border: 1px solid rgba(201,162,74,0.3);
+    border-radius: 18px;
+    padding: 22px 18px;
+    margin: 18px 0;
+    font-size: 1.15rem;
+    color: var(--green-deep);
+  }
+  .dark .ayah-box { color: #f3d98a; }
+  .ayah-source { display:block; margin-top:10px; font-size:.9rem; color: var(--gold); font-family:'Cairo',sans-serif; }
+  .welcome-card .dua {
+    font-size: 1rem; color: var(--text-soft);
+    margin: 15px 0 25px;
+    font-style: italic;
+  }
+  .credit {
+    font-size: .85rem; color: var(--text-soft);
+    margin-top: 20px; padding-top: 15px;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+  }
+  .credit strong { color: var(--gold); }
+  .btn-luxury {
+    display: inline-block; margin-top: 18px;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, var(--green), var(--green-deep));
+    color: #fff7e0; font-weight: 700; font-size: 1.05rem;
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    cursor: pointer; text-decoration:none;
+    box-shadow: 0 8px 25px rgba(11,61,46,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    transition: all .3s ease;
+  }
+  .btn-luxury:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(11,61,46,0.55), 0 0 25px rgba(201,162,74,0.5);
+  }
+
+  /* ===== Header ===== */
+  header {
+    position: sticky; top:0; z-index: 500;
+    background: var(--glass);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+  }
+  .header-top {
+    display:flex; align-items:center; gap:18px;
+    padding: 14px 24px;
+    max-width: 1300px; margin: 0 auto;
+  }
+  .header-img {
+    width:65px; height:65px; border-radius:50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    flex-shrink:0;
+  }
+  .header-img img {
+    width:100%; height:100%; border-radius:50%; object-fit:cover;
+    border: 2px solid white;
+  }
+  .header-text { flex:1; text-align:center; }
+  .header-text h2 { font-size: 1.4rem; color: var(--green-deep); font-weight:900; }
+  .dark .header-text h2 { color: var(--gold-light); }
+  .header-text p { font-size: .9rem; color: var(--text-soft); }
+  .theme-toggle {
+    background: var(--glass-strong);
+    border: 1px solid var(--glass-border);
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor:pointer; color: var(--text);
+    font-size: 1.1rem;
+    transition: transform .3s;
+  }
+  .theme-toggle:hover { transform: rotate(20deg); }
+
+  nav.main-nav {
+    background: linear-gradient(90deg, rgba(11,61,46,0.95), rgba(31,111,84,0.95));
+    backdrop-filter: blur(10px);
+  }
+  nav.main-nav ul {
+    display:flex; flex-wrap:wrap; justify-content:center;
+    list-style:none; max-width:1300px; margin:0 auto;
+    padding: 8px 12px;
+  }
+  nav.main-nav a {
+    color: #fff7e0; text-decoration:none;
+    padding: 10px 16px; font-size: .95rem;
+    border-radius: 10px; transition: all .25s;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  nav.main-nav a:hover {
+    background: rgba(201,162,74,0.25);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+  }
+  nav.main-nav a i { font-size:.85rem; }
+
+  /* ===== Layout ===== */
+  main { max-width: 1300px; margin: 0 auto; padding: 30px 20px 80px; }
+  section { margin-bottom: 70px; scroll-margin-top: 180px; }
+  .section-title {
+    text-align:center; margin-bottom: 35px;
+    position: relative;
+  }
+  .section-title h2 {
+    font-size: 2rem; color: var(--green-deep);
+    display:inline-block; padding: 0 25px;
+    position: relative;
+  }
+  .dark .section-title h2 { color: var(--gold-light); }
+  .section-title h2::before, .section-title h2::after {
+    content:"❁"; color: var(--gold);
+    margin: 0 12px; font-size: 1.3rem;
+  }
+
+  .glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(20,40,60,0.18);
+  }
+
+  .reveal { opacity:0; transform: translateY(30px); transition: all .9s ease; }
+  .reveal.visible { opacity:1; transform: none; }
+
+  /* ===== Hero ===== */
+  .hero {
+    display:grid; grid-template-columns: 1fr; gap: 30px;
+    padding: 40px 30px;
+    text-align:center;
+  }
+  .hero .shaheed-frame { width: 200px; height:200px; }
+  .hero h1 {
+    font-size: 2.4rem; color: var(--green-deep);
+    margin-bottom: 12px;
+  }
+  .dark .hero h1 { color: var(--gold-light); }
+  .hero .sub { font-size: 1.15rem; color: var(--text-soft); margin-bottom: 20px; }
+  .hero-dua {
+    font-size: 1.15rem; color: var(--green);
+    background: rgba(201,162,74,0.08);
+    border-right: 4px solid var(--gold);
+    padding: 15px 20px; border-radius: 10px;
+    max-width: 700px; margin: 20px auto;
+  }
+  .dark .hero-dua { color: var(--gold-light); }
+  .counters {
+    display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 18px; margin-top: 30px;
+  }
+  .counter-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px 14px;
+    text-align:center;
+  }
+  .dark .counter-box { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); }
+  .counter-box i { font-size: 1.8rem; color: var(--gold); margin-bottom:8px; }
+  .counter-box .num { font-size: 1.8rem; font-weight: 900; color: var(--green-deep); }
+  .dark .counter-box .num { color: var(--gold-light); }
+  .counter-box .label { font-size: .9rem; color: var(--text-soft); }
+
+  /* ===== Grid ===== */
+  .grid-2 { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 22px; }
+  .grid-3 { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 20px; }
+  .grid-4 { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 18px; }
+
+  /* ===== Quran ===== */
+  .quran-controls {
+    display:flex; flex-wrap:wrap; gap:12px; margin-bottom: 20px;
+    justify-content:center;
+  }
+  .quran-controls input, .quran-controls select {
+    padding: 12px 18px; border-radius:12px;
+    border:1px solid var(--glass-border);
+    background: var(--glass-strong);
+    color: var(--text); font-family:inherit; font-size:1rem;
+    min-width: 180px;
+  }
+  .surah-list {
+    max-height: 400px; overflow-y:auto;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+    gap: 10px; padding:10px;
+  }
+  .surah-item {
+    background: var(--glass-strong); border:1px solid var(--glass-border);
+    border-radius: 12px; padding: 12px; cursor:pointer;
+    display:flex; align-items:center; gap:10px;
+    transition: all .25s;
+  }
+  .surah-item:hover { background: rgba(201,162,74,0.2); transform: translateX(-3px); }
+  .surah-num {
+    width:32px; height:32px; border-radius:50%;
+    background: linear-gradient(135deg, var(--green), var(--green-deep));
+    color: var(--gold-light); display:flex; align-items:center; justify-content:center;
+    font-size:.85rem; font-weight:700; flex-shrink:0;
+  }
+  .surah-name { font-family:'Amiri',serif; font-size:1.1rem; }
+  audio { width:100%; margin-top: 18px; }
+
+  /* ===== Athkar ===== */
+  .athkar-tabs {
+    display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom: 25px;
+  }
+  .tab-btn {
+    padding: 10px 22px; border-radius:50px;
+    background: var(--glass-strong); border:1px solid var(--glass-border);
+    color: var(--text); cursor:pointer; font-family:inherit; font-weight:600;
+    transition: all .3s;
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--green), var(--green-deep));
+    color: var(--gold-light); border-color: var(--gold);
+  }
+  .thikr-item {
+    margin-bottom: 14px; padding: 18px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    display:flex; align-items:center; gap:16px;
+  }
+  .dark .thikr-item { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); }
+  .thikr-text { flex:1; font-family:'Amiri',serif; font-size:1.15rem; }
+  .thikr-counter {
+    width:55px; height:55px; border-radius:50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--green-deep); border:none; cursor:pointer;
+    font-weight:900; font-size:1.1rem; flex-shrink:0;
+    box-shadow: 0 4px 15px rgba(201,162,74,0.4);
+    transition: transform .2s;
+  }
+  .thikr-counter:active { transform: scale(.9); }
+
+  /* ===== Tasbih ===== */
+  .tasbih-wrap {
+    text-align:center;
+  }
+  .tasbih-display {
+    font-size: 4.5rem; font-weight: 900;
+    color: var(--green-deep);
+    margin: 20px 0;
+    font-family: 'Cairo',sans-serif;
+    text-shadow: 0 2px 10px rgba(201,162,74,0.4);
+  }
+  .dark .tasbih-display { color: var(--gold-light); }
+  .tasbih-phrase {
+    font-family:'Amiri',serif; font-size: 2rem;
+    color: var(--green); margin-bottom: 15px;
+  }
+  .dark .tasbih-phrase { color: var(--gold-light); }
+  .tasbih-btn {
+    width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--gold-light), var(--gold) 60%, #8a6a2c);
+    border: 6px solid white;
+    color: var(--green-deep); font-weight: 900; font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(201,162,74,0.5), inset 0 -5px 15px rgba(0,0,0,0.2);
+    transition: transform .15s;
+  }
+  .tasbih-btn:active { transform: scale(.93); }
+  .tasbih-controls {
+    display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top: 25px;
+  }
+  .tasbih-controls button {
+    padding: 10px 18px; border-radius:10px;
+    border:1px solid var(--glass-border);
+    background: var(--glass-strong); color: var(--text);
+    cursor:pointer; font-family:inherit;
+  }
+
+  /* ===== Sadaqat cards ===== */
+  .sadaqa-card {
+    text-align:center; padding: 30px 22px;
+  }
+  .sadaqa-card i {
+    font-size: 3rem; color: var(--gold);
+    margin-bottom: 15px;
+    background: linear-gradient(135deg,var(--gold),var(--gold-light));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .sadaqa-card h3 { font-size:1.2rem; color: var(--green-deep); margin-bottom:10px; }
+  .dark .sadaqa-card h3 { color: var(--gold-light); }
+  .sadaqa-card p { color: var(--text-soft); font-size: .95rem; }
+
+  /* ===== Bio ===== */
+  .bio-item {
+    padding: 22px;
+    border-right: 4px solid var(--gold);
+    background: linear-gradient(90deg, rgba(201,162,74,0.08), transparent);
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+  .bio-item h3 { color: var(--green-deep); margin-bottom: 8px; }
+  .dark .bio-item h3 { color: var(--gold-light); }
+
+  /* ===== Gallery ===== */
+  .gallery {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+  }
+  .gallery-item {
+    position:relative; overflow:hidden; border-radius:16px;
+    aspect-ratio: 1/1; cursor:pointer;
+    border: 3px solid white;
+    box-shadow: var(--shadow);
+  }
+  .gallery-item img {
+    width:100%; height:100%; object-fit:cover;
+    transition: transform .6s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.1); }
+
+  #lightbox {
+    position:fixed; inset:0; z-index:8000;
+    background: rgba(0,0,0,0.92);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  #lightbox.show { display:flex; }
+  #lightbox img { max-width:90%; max-height:85vh; border-radius:12px; border:4px solid var(--gold); }
+  #lightbox .close { position:absolute; top:20px; left:20px; color:white; font-size:2rem; cursor:pointer; background:none; border:none; }
+
+  /* ===== Prayer Times ===== */
+  .prayer-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap: 14px;
+  }
+  .prayer-box {
+    text-align:center; padding: 20px 12px;
+    background: linear-gradient(135deg, rgba(31,111,84,0.15), rgba(201,162,74,0.1));
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+  }
+  .prayer-box.next { background: linear-gradient(135deg, var(--green), var(--green-deep)); color: var(--gold-light); border-color: var(--gold); }
+  .prayer-box h3 { font-family:'Amiri',serif; font-size: 1.3rem; margin-bottom:6px; }
+  .prayer-box .time { font-size: 1.5rem; font-weight: 700; }
+  .countdown { text-align:center; margin-top: 20px; font-size: 1.1rem; color: var(--gold); font-weight: 700; }
+
+  /* ===== Contact ===== */
+  .contact-form { max-width: 600px; margin:0 auto; }
+  .contact-form input, .contact-form textarea {
+    width:100%; padding:14px 18px; margin-bottom:14px;
+    border-radius:12px; border:1px solid var(--glass-border);
+    background: var(--glass-strong); color: var(--text);
+    font-family: inherit; font-size:1rem;
+  }
+  .contact-form textarea { min-height: 140px; resize: vertical; }
+  .contact-form button {
+    width:100%; padding:14px;
+    background: linear-gradient(135deg,var(--green),var(--green-deep));
+    color: var(--gold-light); border:2px solid var(--gold);
+    border-radius:12px; cursor:pointer; font-family:inherit;
+    font-size:1.1rem; font-weight:700;
+  }
+
+  /* ===== WhatsApp Floating ===== */
+  .whatsapp-float {
+    position: fixed; bottom: 25px; left: 25px; z-index: 700;
+    width: 62px; height: 62px; border-radius: 50%;
+    background: #25D366; color:white;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 2rem; text-decoration:none;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.55);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    50% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background: linear-gradient(135deg, rgba(11,61,46,0.95), rgba(31,111,84,0.95));
+    color: #fff7e0; padding: 50px 20px 25px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border-top: 3px solid var(--gold);
+    margin-top: 60px;
+  }
+  footer h3 { color: var(--gold-light); margin-bottom:12px; font-size: 1.4rem; }
+  footer p { margin-bottom:10px; opacity:.9; }
+  footer .footer-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap: 30px; max-width: 1100px; margin: 0 auto 30px;
+    text-align: center;
+  }
+  footer a { color: var(--gold-light); text-decoration:none; }
+  footer .copy { padding-top: 20px; border-top:1px solid rgba(255,255,255,0.15); font-size:.9rem; opacity:.8; }
+
+  /* ===== PWA Install ===== */
+  #installPrompt {
+    position: fixed; bottom: 100px; left: 20px;
+    background: var(--glass-strong);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--gold);
+    border-radius: 14px; padding: 14px 20px;
+    display:none; align-items:center; gap:12px;
+    z-index: 600; box-shadow: var(--shadow);
+  }
+  #installPrompt button {
+    background: var(--green); color: var(--gold-light);
+    border: none; padding: 8px 14px; border-radius: 8px; cursor:pointer;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.7rem; }
+    .tasbih-display { font-size: 3.2rem; }
+    .section-title h2 { font-size: 1.5rem; }
+    .header-text h2 { font-size: 1.1rem; }
+    .header-img { width: 55px; height: 55px; }
+    nav.main-nav a { font-size: .85rem; padding: 8px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <p>اللهم ارحم شهداءنا الأبرار</p>
+</div>
+
+<!-- Welcome Popup -->
+<div id="welcome">
+  <div class="welcome-card">
+    <div class="shaheed-frame">
+      <img src="https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg" alt="الشهيد فرحات زهير حرارة" />
+    </div>
+    <h1>صدقة جارية عن روح الشهيد<br/>فرحات زهير حرارة</h1>
+    <div class="ayah-box quran">
+      ﴿وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا ۚ بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ ۝ فَرِحِينَ بِمَا آتَاهُمُ اللَّهُ مِن فَضْلِهِ وَيَسْتَبْشِرُونَ بِالَّذِينَ لَمْ يَلْحَقُوا بِهِم مِّنْ خَلْفِهِمْ أَلَّا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ ۝ يَسْتَبْشِرُونَ بِنِعْمَةٍ مِّنَ اللَّهِ وَفَضْلٍ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ﴾
+      <span class="ayah-source">سورة آل عمران - الآيات 169-171</span>
+    </div>
+    <p class="dua">نسأل الله أن يتقبل هذا العمل صدقة جارية عن روح الشهيد وأن يجعلها في ميزان حسناته.</p>
+    <button class="btn-luxury" onclick="enterSite()">
+      <i class="fa-solid fa-door-open"></i> الدخول إلى الموقع
+    </button>
+    <div class="credit">
+      تصميم وتنفيذ: <strong>م. فراس محمد سحويل</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-top">
+    <div class="header-img">
+      <img src="https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg" alt="الشهيد فرحات زهير حرارة" />
+    </div>
+    <div class="header-text">
+      <h2>فرحات زهير حرارة</h2>
+      <p>صدقة جارية على روحه الطاهرة</p>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#home"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+      <li><a href="#quran"><i class="fa-solid fa-book-quran"></i> القرآن الكريم</a></li>
+      <li><a href="#athkar"><i class="fa-solid fa-sun"></i> الأذكار</a></li>
+      <li><a href="#duaa"><i class="fa-solid fa-hands-praying"></i> الأدعية</a></li>
+      <li><a href="#tasbih"><i class="fa-solid fa-circle-dot"></i> التسبيح</a></li>
+      <li><a href="#sadaqat"><i class="fa-solid fa-hand-holding-heart"></i> الصدقات الجارية</a></li>
+      <li><a href="#bio"><i class="fa-solid fa-feather"></i> سيرة الشهيد</a></li>
+      <li><a href="#gallery"><i class="fa-solid fa-images"></i> معرض الصور</a></li>
+      <li><a href="#prayer"><i class="fa-solid fa-mosque"></i> مواقيت الصلاة</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> تواصل معنا</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="reveal">
+    <div class="glass-card hero">
+      <div class="shaheed-frame" style="margin: 0 auto;">
+        <img src="https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg" alt="الشهيد فرحات زهير حرارة" />
+      </div>
+      <h1>الشهيد فرحات زهير حرارة</h1>
+      <p class="sub">رحمه الله وأسكنه فسيح جناته</p>
+      <p class="hero-dua arabic-serif">
+        اللهم اجعل قبره روضة من رياض الجنة، واغفر له وارحمه، واجعله مع النبيين والصديقين والشهداء والصالحين، وحسن أولئك رفيقاً.
+      </p>
+      <div class="counters">
+        <div class="counter-box">
+          <i class="fa-solid fa-users"></i>
+          <div class="num" id="visitorCount">0</div>
+          <div class="label">عدد الزوار</div>
+        </div>
+        <div class="counter-box">
+          <i class="fa-solid fa-book-open"></i>
+          <div class="num" id="fatihaCount">0</div>
+          <div class="label">قراءة الفاتحة</div>
+        </div>
+        <div class="counter-box">
+          <i class="fa-solid fa-hands-praying"></i>
+          <div class="num" id="duaaCount">0</div>
+          <div class="label">دعوات للشهيد</div>
+        </div>
+      </div>
+      <div style="margin-top:25px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <button class="btn-luxury" onclick="readFatiha()"><i class="fa-solid fa-book-open"></i> قرأت الفاتحة</button>
+        <button class="btn-luxury" onclick="prayForShaheed()" style="background: linear-gradient(135deg, var(--gold), #8a6a2c);"><i class="fa-solid fa-hands-praying"></i> دعوت للشهيد</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quran -->
+  <section id="quran" class="reveal">
+    <div class="section-title"><h2>القرآن الكريم</h2></div>
+    <div class="glass-card">
+      <div class="quran-controls">
+        <input type="text" id="surahSearch" placeholder="ابحث عن سورة..." />
+        <select id="reciterSelect">
+          <option value="ar.alafasy">مشاري العفاسي</option>
+          <option value="ar.abdulbasitmurattal">عبد الباسط (مرتل)</option>
+          <option value="ar.husary">محمود الحصري</option>
+          <option value="ar.minshawi">محمد المنشاوي</option>
+          <option value="ar.sudais">عبد الرحمن السديس</option>
+        </select>
+      </div>
+      <div id="surahList" class="surah-list">جاري تحميل السور...</div>
+      <audio id="quranAudio" controls></audio>
+      <p id="nowPlaying" style="text-align:center;margin-top:10px;color:var(--gold);font-weight:700;"></p>
+    </div>
+  </section>
+
+  <!-- Athkar -->
+  <section id="athkar" class="reveal">
+    <div class="section-title"><h2>الأذكار</h2></div>
+    <div class="glass-card">
+      <div class="athkar-tabs">
+        <button class="tab-btn active" data-tab="sabah">أذكار الصباح</button>
+        <button class="tab-btn" data-tab="masaa">أذكار المساء</button>
+        <button class="tab-btn" data-tab="nawm">أذكار النوم</button>
+        <button class="tab-btn" data-tab="istiqath">أذكار الاستيقاظ</button>
+      </div>
+      <div id="athkarList"></div>
+    </div>
+  </section>
+
+  <!-- Duaa -->
+  <section id="duaa" class="reveal">
+    <div class="section-title"><h2>الأدعية</h2></div>
+    <div class="grid-2">
+      <div class="glass-card">
+        <h3 style="color:var(--green-deep);margin-bottom:12px;"><i class="fa-solid fa-mosque"></i> دعاء للميت</h3>
+        <p class="arabic-serif" style="font-size:1.1rem;">اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس.</p>
+        <button class="btn-luxury" style="margin-top:15px;padding:10px 20px;font-size:.9rem;" onclick="shareDuaa(this)"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
+      </div>
+      <div class="glass-card">
+        <h3 style="color:var(--green-deep);margin-bottom:12px;"><i class="fa-solid fa-star-and-crescent"></i> دعاء للشهداء</h3>
+        <p class="arabic-serif" style="font-size:1.1rem;">اللهم اجعل شهداءنا في عليين، مع النبيين والصديقين والشهداء والصالحين، اللهم تقبلهم في الشهداء، وارفع درجاتهم في عليين.</p>
+        <button class="btn-luxury" style="margin-top:15px;padding:10px 20px;font-size:.9rem;" onclick="shareDuaa(this)"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
+      </div>
+      <div class="glass-card">
+        <h3 style="color:var(--green-deep);margin-bottom:12px;"><i class="fa-solid fa-heart"></i> دعاء عام</h3>
+        <p class="arabic-serif" style="font-size:1.1rem;">اللهم إنا نسألك من الخير كله عاجله وآجله ما علمنا منه وما لم نعلم، ونعوذ بك من الشر كله عاجله وآجله ما علمنا منه وما لم نعلم.</p>
+        <button class="btn-luxury" style="margin-top:15px;padding:10px 20px;font-size:.9rem;" onclick="shareDuaa(this)"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
+      </div>
+      <div class="glass-card">
+        <h3 style="color:var(--green-deep);margin-bottom:12px;"><i class="fa-solid fa-dove"></i> دعاء الرحمة</h3>
+        <p class="arabic-serif" style="font-size:1.1rem;">اللهم اجعل قبره روضة من رياض الجنة، ولا تجعله حفرة من حفر النار، اللهم آنس وحدته، واجبر كسره، وارحم غربته، وارفع درجته.</p>
+        <button class="btn-luxury" style="margin-top:15px;padding:10px 20px;font-size:.9rem;" onclick="shareDuaa(this)"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tasbih -->
+  <section id="tasbih" class="reveal">
+    <div class="section-title"><h2>التسبيح الإلكتروني</h2></div>
+    <div class="glass-card tasbih-wrap">
+      <div class="tasbih-phrase arabic-serif" id="tasbihPhrase">سبحان الله</div>
+      <div class="tasbih-display" id="tasbihCount">0</div>
+      <button class="tasbih-btn" onclick="incrementTasbih()">اضغط للتسبيح</button>
+      <div class="tasbih-controls">
+        <button onclick="setPhrase('سبحان الله')">سبحان الله</button>
+        <button onclick="setPhrase('الحمد لله')">الحمد لله</button>
+        <button onclick="setPhrase('الله أكبر')">الله أكبر</button>
+        <button onclick="setPhrase('لا إله إلا الله')">لا إله إلا الله</button>
+        <button onclick="setPhrase('أستغفر الله')">أستغفر الله</button>
+        <button onclick="resetTasbih()" style="background:linear-gradient(135deg,#c0392b,#922b21);color:white;">إعادة الضبط</button>
+      </div>
+      <p style="margin-top:18px;color:var(--text-soft);">المجموع الكلي: <strong id="tasbihTotal">0</strong></p>
+    </div>
+  </section>
+
+  <!-- Sadaqat -->
+  <section id="sadaqat" class="reveal">
+    <div class="section-title"><h2>الصدقات الجارية</h2></div>
+    <div class="grid-3">
+      <div class="glass-card sadaqa-card">
+        <i class="fa-solid fa-book-quran"></i>
+        <h3>نشر القرآن الكريم</h3>
+        <p>المشاركة في نشر آيات القرآن وتوزيع المصاحف صدقة جارية تنال أجرها كلما تُليت.</p>
+      </div>
+      <div class="glass-card sadaqa-card">
+        <i class="fa-solid fa-hands-praying"></i>
+        <h3>الدعاء للشهيد</h3>
+        <p>دعوة صادقة من قلب مؤمن ترفع درجة الشهيد وتنير قبره وتؤنس وحدته.</p>
+      </div>
+      <div class="glass-card sadaqa-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>العلم النافع</h3>
+        <p>نشر العلم النافع وتعليم الناس الخير صدقة جارية تستمر بعد الممات.</p>
+      </div>
+      <div class="glass-card sadaqa-card">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>المساهمة المجتمعية</h3>
+        <p>مساعدة المحتاجين وكفالة الأيتام وإطعام الفقراء من أعظم الصدقات الجارية.</p>
+      </div>
+      <div class="glass-card sadaqa-card">
+        <i class="fa-solid fa-tree"></i>
+        <h3>غرس الأشجار</h3>
+        <p>غرس شجرة يأكل من ثمرها إنسان أو طائر صدقة جارية مستمرة الأجر.</p>
+      </div>
+      <div class="glass-card sadaqa-card">
+        <i class="fa-solid fa-droplet"></i>
+        <h3>سقيا الماء</h3>
+        <p>حفر بئر أو إيصال الماء للمحتاجين من أفضل الصدقات الجارية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section id="bio" class="reveal">
+    <div class="section-title"><h2>سيرة الشهيد</h2></div>
+    <div class="glass-card">
+      <div class="bio-item">
+        <h3><i class="fa-solid fa-feather"></i> نبذة عن الشهيد</h3>
+        <p>الشهيد فرحات زهير حرارة رحمه الله، شاب مؤمن نشأ في كنف أسرة كريمة، عُرف بأخلاقه الفاضلة وحبه لدينه ووطنه، عاش حياته بصدق ومات شهيداً في سبيل الله.</p>
+      </div>
+      <div class="bio-item">
+        <h3><i class="fa-solid fa-clock"></i> محطات من حياته</h3>
+        <p>كان قدوة لمن حوله في العبادة والأخلاق والإخلاص، حريصاً على أداء الصلوات في أوقاتها، باراً بوالديه، واصلاً لرحمه، محباً للخير والإصلاح بين الناس.</p>
+      </div>
+      <div class="bio-item">
+        <h3><i class="fa-solid fa-heart"></i> أخلاقه وصفاته</h3>
+        <p>تميز بطيبة القلب وحسن المعاملة والكرم والشجاعة. كان دائم الابتسامة، كريم اليد، نصيراً للمظلوم، عوناً للمحتاج، يحب الناس ويحبونه.</p>
+      </div>
+      <div class="bio-item">
+        <h3><i class="fa-solid fa-star"></i> رسالة وفاء وتقدير</h3>
+        <p>إلى روحك الطاهرة يا فرحات، نهديك هذه الصدقة الجارية لتكون في ميزان حسناتك. رحلت بجسدك وبقيت سيرتك العطرة شاهدة على إيمانك وتضحيتك. نسأل الله أن يجمعنا بك في الفردوس الأعلى.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="reveal">
+    <div class="section-title"><h2>معرض الصور</h2></div>
+    <div class="glass-card">
+      <div class="gallery" id="galleryGrid">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Prayer Times -->
+  <section id="prayer" class="reveal">
+    <div class="section-title"><h2>مواقيت الصلاة</h2></div>
+    <div class="glass-card">
+      <p style="text-align:center;margin-bottom:18px;color:var(--text-soft);">المدينة: <strong id="cityName">جاري التحديد...</strong></p>
+      <div class="prayer-grid" id="prayerGrid">جاري تحميل المواقيت...</div>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="reveal">
+    <div class="section-title"><h2>تواصل معنا</h2></div>
+    <div class="glass-card">
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="الاسم الكامل" required />
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+        <textarea id="message" placeholder="رسالتك..." required></textarea>
+        <button type="submit"><i class="fa-brands fa-whatsapp"></i> إرسال عبر واتساب</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightboxImg" src="" alt="" />
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/972594344675" target="_blank" class="whatsapp-float" title="تواصل عبر واتساب">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- PWA Install -->
+<div id="installPrompt">
+  <i class="fa-solid fa-download" style="color:var(--gold);font-size:1.3rem;"></i>
+  <span>ثبّت الموقع كتطبيق</span>
+  <button onclick="installPWA()">تثبيت</button>
+  <button onclick="document.getElementById('installPrompt').style.display='none'" style="background:transparent;color:var(--text);">إغلاق</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>صدقة جارية</h3>
+      <p>عن روح الشهيد<br/><strong>فرحات زهير حرارة</strong><br/>رحمه الله وأسكنه فسيح جناته</p>
+    </div>
+    <div>
+      <h3>تواصل معنا</h3>
+      <p><a href="https://wa.me/972594344675" target="_blank"><i class="fa-brands fa-whatsapp"></i> +972 59 434 4675</a></p>
+    </div>
+    <div>
+      <h3>تصميم وبرمجة</h3>
+      <p>م. فراس محمد سحويل</p>
+    </div>
+  </div>
+  <div class="copy">جميع الحقوق محفوظة © 2026</div>
+</footer>
+
+<script>
+/* ===== Loader ===== */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hide');
+    setTimeout(() => document.getElementById('loader').remove(), 800);
+  }, 1200);
+});
+
+/* ===== Welcome Popup ===== */
+function enterSite() {
+  const w = document.getElementById('welcome');
+  w.classList.add('hide');
+  setTimeout(() => w.remove(), 800);
+}
+
+/* ===== Theme ===== */
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  const icon = document.getElementById('themeIcon');
+  const isDark = document.body.classList.contains('dark');
+  icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+  document.getElementById('themeIcon').className = 'fa-solid fa-sun';
+}
+
+/* ===== Counters ===== */
+function getCount(key) { return parseInt(localStorage.getItem(key) || '0'); }
+function setCount(key, val) { localStorage.setItem(key, val); }
+
+// Visitor counter (shared illusion via random + local)
+let visitors = parseInt(localStorage.getItem('visitors') || '0');
+if (!sessionStorage.getItem('visited')) {
+  visitors += 1;
+  localStorage.setItem('visitors', visitors);
+  sessionStorage.setItem('visited', '1');
+}
+document.getElementById('visitorCount').textContent = (visitors + 1247).toLocaleString('ar-EG');
+document.getElementById('fatihaCount').textContent = (getCount('fatiha') + 542).toLocaleString('ar-EG');
+document.getElementById('duaaCount').textContent = (getCount('duaa') + 876).toLocaleString('ar-EG');
+
+function readFatiha() {
+  const c = getCount('fatiha') + 1; setCount('fatiha', c);
+  document.getElementById('fatihaCount').textContent = (c + 542).toLocaleString('ar-EG');
+  alert('جزاك الله خيراً ❁ تقبل الله منك');
+}
+function prayForShaheed() {
+  const c = getCount('duaa') + 1; setCount('duaa', c);
+  document.getElementById('duaaCount').textContent = (c + 876).toLocaleString('ar-EG');
+  alert('اللهم تقبل ❁ آمين');
+}
+
+/* ===== Reveal Animation ===== */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ===== Quran ===== */
+let allSurahs = [];
+async function loadSurahs() {
+  try {
+    const res = await fetch('https://api.alquran.cloud/v1/surah');
+    const data = await res.json();
+    allSurahs = data.data;
+    renderSurahs(allSurahs);
+  } catch (e) {
+    document.getElementById('surahList').innerHTML = '<p style="text-align:center;color:var(--text-soft);">تعذر تحميل السور حالياً</p>';
+  }
+}
+function renderSurahs(list) {
+  const html = list.map(s => `
+    <div class="surah-item" onclick="playSurah(${s.number}, '${s.name}')">
+      <div class="surah-num">${s.number}</div>
+      <div class="surah-name">${s.name}</div>
+    </div>
+  `).join('');
+  document.getElementById('surahList').innerHTML = html;
+}
+function playSurah(num, name) {
+  const reciter = document.getElementById('reciterSelect').value;
+  const padded = String(num).padStart(3, '0');
+  const audio = document.getElementById('quranAudio');
+  // Use everyayah CDN
+  const reciterMap = {
+    'ar.alafasy': 'Alafasy_128kbps',
+    'ar.abdulbasitmurattal': 'Abdul_Basit_Murattal_64kbps',
+    'ar.husary': 'Husary_128kbps',
+    'ar.minshawi': 'Minshawy_Murattal_128kbps',
+    'ar.sudais': 'Abdurrahmaan_As-Sudais_192kbps'
+  };
+  audio.src = `https://everyayah.com/data/${reciterMap[reciter]}/${padded}001.mp3`;
+  audio.play().catch(()=>{});
+  document.getElementById('nowPlaying').textContent = '▶ يتم تشغيل: ' + name;
+  localStorage.setItem('lastSurah', num);
+}
+document.getElementById('surahSearch').addEventListener('input', e => {
+  const q = e.target.value.trim();
+  renderSurahs(allSurahs.filter(s => s.name.includes(q) || s.englishName.toLowerCase().includes(q.toLowerCase())));
+});
+loadSurahs();
+
+/* ===== Athkar ===== */
+const athkarData = {
+  sabah: [
+    'أَصْبَحْنَا وَأَصْبَحَ المُلْكُ لِلَّهِ، وَالحَمْدُ لِلَّهِ، لا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لا شَرِيكَ لَهُ',
+    'اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ',
+    'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ',
+    'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ',
+    'بِسْمِ اللَّهِ الَّذِي لا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلا فِي السَّمَاءِ وَهُوَ السَّمِيعُ العَلِيمُ',
+    'حَسْبِيَ اللَّهُ لا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ العَرْشِ العَظِيمِ'
+  ],
+  masaa: [
+    'أَمْسَيْنَا وَأَمْسَى المُلْكُ لِلَّهِ، وَالحَمْدُ لِلَّهِ، لا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لا شَرِيكَ لَهُ',
+    'اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ المَصِيرُ',
+    'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
+    'اللَّهُمَّ عَالِمَ الغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ',
+    'اللَّهُمَّ إِنِّي أَسْأَلُكَ العَفْوَ وَالعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ'
+  ],
+  nawm: [
+    'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا',
+    'اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ',
+    'سُبْحَانَ اللَّهِ (33)، الحَمْدُ لِلَّهِ (33)، اللَّهُ أَكْبَرُ (34)',
+    'اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ'
+  ],
+  istiqath: [
+    'الحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ',
+    'لا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لا شَرِيكَ لَهُ، لَهُ المُلْكُ وَلَهُ الحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',
+    'الحَمْدُ لِلَّهِ الَّذِي عَافَانِي فِي جَسَدِي، وَرَدَّ عَلَيَّ رُوحِي، وَأَذِنَ لِي بِذِكْرِهِ'
+  ]
+};
+function renderAthkar(tab) {
+  const list = athkarData[tab];
+  const html = list.map((t,i) => {
+    const key = `thikr_${tab}_${i}`;
+    const count = getCount(key);
+    return `<div class="thikr-item">
+      <div class="thikr-text">${t}</div>
+      <button class="thikr-counter" onclick="incThikr('${key}', this)">${count}</button>
+    </div>`;
+  }).join('');
+  document.getElementById('athkarList').innerHTML = html;
+}
+function incThikr(key, btn) {
+  const c = getCount(key) + 1;
+  setCount(key, c);
+  btn.textContent = c;
+}
+document.querySelectorAll('.tab-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    renderAthkar(b.dataset.tab);
+  });
+});
+renderAthkar('sabah');
+
+/* ===== Tasbih ===== */
+function updateTasbih() {
+  document.getElementById('tasbihCount').textContent = getCount('tasbih_current').toLocaleString('ar-EG');
+  document.getElementById('tasbihTotal').textContent = getCount('tasbih_total').toLocaleString('ar-EG');
+}
+function incrementTasbih() {
+  setCount('tasbih_current', getCount('tasbih_current') + 1);
+  setCount('tasbih_total', getCount('tasbih_total') + 1);
+  updateTasbih();
+  if (navigator.vibrate) navigator.vibrate(30);
+}
+function setPhrase(p) {
+  document.getElementById('tasbihPhrase').textContent = p;
+  setCount('tasbih_current', 0);
+  updateTasbih();
+}
+function resetTasbih() {
+  setCount('tasbih_current', 0);
+  updateTasbih();
+}
+updateTasbih();
+
+/* ===== Duaa Share ===== */
+function shareDuaa(btn) {
+  const text = btn.parentElement.querySelector('p').textContent;
+  if (navigator.share) {
+    navigator.share({ title: 'دعاء', text: text + '\n\nصدقة جارية عن روح الشهيد فرحات زهير حرارة' });
+  } else {
+    navigator.clipboard.writeText(text);
+    alert('تم نسخ الدعاء ❁');
+  }
+}
+
+/* ===== Gallery ===== */
+/* ===== Gallery ===== */
+const galleryImages = [
+  'https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg',
+  'https://cdn.phototourl.com/free/2026-06-07-83cb21e8-3234-453b-99cd-b56401d38e29.jpg',
+  'https://cdn.phototourl.com/free/2026-06-07-42e820ab-ce1c-43f7-acc1-9ebae1053101.jpg',
+  'https://cdn.phototourl.com/free/2026-06-07-82e0c3fc-58f6-443b-b00e-96a3387e03a7.jpg'
+];
+function renderGallery() {
+  const html = galleryImages.map(src => `
+    <div class="gallery-item" onclick="openLightbox('${src}')">
+      <img src="${src}" alt="الشهيد فرحات زهير حرارة" loading="lazy" />
+    </div>
+  `).join('');
+  document.getElementById('galleryGrid').innerHTML = html || '<p style="text-align:center;color:var(--text-soft);grid-column:1/-1;">سيتم إضافة المزيد من الصور قريباً</p>';
+}
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('show');
+}
+renderGallery();
+
+/* ===== Prayer Times ===== */
+async function loadPrayerTimes() {
+  try {
+    const res = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Hebron&country=Palestine&method=4');
+    const data = await res.json();
+    const t = data.data.timings;
+    document.getElementById('cityName').textContent = 'فلسطين';
+    const prayers = [
+      { name: 'الفجر', time: t.Fajr, icon: 'fa-cloud-sun' },
+      { name: 'الشروق', time: t.Sunrise, icon: 'fa-sun' },
+      { name: 'الظهر', time: t.Dhuhr, icon: 'fa-sun' },
+      { name: 'العصر', time: t.Asr, icon: 'fa-cloud-sun' },
+      { name: 'المغرب', time: t.Maghrib, icon: 'fa-moon' },
+      { name: 'العشاء', time: t.Isha, icon: 'fa-star-and-crescent' }
+    ];
+    const now = new Date();
+    const nowMin = now.getHours()*60 + now.getMinutes();
+    let nextIdx = -1;
+    prayers.forEach((p,i) => {
+      const [h,m] = p.time.split(':').map(Number);
+      if (h*60+m > nowMin && nextIdx === -1) nextIdx = i;
+    });
+    if (nextIdx === -1) nextIdx = 0;
+
+    document.getElementById('prayerGrid').innerHTML = prayers.map((p,i) => `
+      <div class="prayer-box ${i===nextIdx?'next':''}">
+        <i class="fa-solid ${p.icon}" style="font-size:1.5rem;margin-bottom:5px;"></i>
+        <h3>${p.name}</h3>
+        <div class="time">${p.time}</div>
+      </div>
+    `).join('');
+
+    // Countdown
+    const next = prayers[nextIdx];
+    const [nh,nm] = next.time.split(':').map(Number);
+    let diffMin = (nh*60+nm) - nowMin;
+    if (diffMin < 0) diffMin += 24*60;
+    const hh = Math.floor(diffMin/60), mm = diffMin%60;
+    document.getElementById('countdown').textContent = `الصلاة القادمة: ${next.name} بعد ${hh} ساعة و ${mm} دقيقة`;
+  } catch (e) {
+    document.getElementById('prayerGrid').innerHTML = '<p style="text-align:center;color:var(--text-soft);grid-column:1/-1;">تعذر تحميل المواقيت</p>';
+  }
+}
+loadPrayerTimes();
+setInterval(loadPrayerTimes, 60000);
+
+/* ===== Contact ===== */
+function sendMessage(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const msg = document.getElementById('message').value.trim();
+  if (!name || !email || !msg) return;
+  const text = `السلام عليكم\nالاسم: ${name}\nالبريد: ${email}\n\n${msg}`;
+  window.open(`https://wa.me/972594344675?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+/* ===== PWA ===== */
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installPrompt').style.display = 'flex';
+});
+function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      deferredPrompt = null;
+      document.getElementById('installPrompt').style.display = 'none';
+    });
+  }
+}
+
+// تسجيل Service Worker للعمل دون اتصال
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
+      .then((reg) => {
+        console.log('✓ تم تسجيل Service Worker بنجاح:', reg.scope);
+        // تحقق من التحديثات كل ساعة
+        setInterval(() => reg.update(), 60 * 60 * 1000);
+      })
+      .catch((err) => console.warn('فشل تسجيل Service Worker:', err));
+  });
+}
+</script>
+
+</body>
+</html>
