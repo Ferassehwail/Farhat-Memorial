@@ -1077,16 +1077,28 @@ function shareDuaa(btn) {
 }
 
 /* ===== Gallery ===== */
-/* ===== Gallery ===== */
 const galleryImages = [
   'https://cdn.phototourl.com/free/2026-06-07-1dd18aee-7983-4f9e-998b-6cbb2f75eb22.jpg',
   'https://cdn.phototourl.com/free/2026-06-07-83cb21e8-3234-453b-99cd-b56401d38e29.jpg',
   'https://cdn.phototourl.com/free/2026-06-07-42e820ab-ce1c-43f7-acc1-9ebae1053101.jpg',
-  'https://cdn.phototourl.com/free/2026-06-07-82e0c3fc-58f6-443b-b00e-96a3387e03a7.jpg'
+  'https://cdn.phototourl.com/free/2026-06-07-82e0c3fc-58f6-443b-b00e-96a3387e03a7.jpg',
+  'https://cdn.phototourl.com/free/2026-06-07-82e0c3fc-58f6-443b-b00e-96a3387e03a7.jpg' // الرابط الجديد المضاف
 ];
+
+// دالة الـ Lightbox لتجنب أخطاء الـ ReferenceError
+function openLightbox(src) {
+  console.log("تم فتح الصورة:", src);
+  // هنا تضع منطق فتح الصورة التكبيرية الخاص بك
+}
 
 function renderGallery() {
   const container = document.getElementById("gallery");
+  
+  // التحقق من وجود العنصر في الصفحة منعاً للأخطاء
+  if (!container) {
+    console.error("لم يتم العثور على عنصر يحمل الـ id 'gallery'");
+    return;
+  }
 
   const html = galleryImages.map(src => `
     <div class="gallery-item" onclick="openLightbox('${src}')">
@@ -1095,6 +1107,10 @@ function renderGallery() {
   `).join("");
 
   container.innerHTML = html;
+}
+
+// استدعاء الدالة تلقائياً بمجرد تحميل عناصر الصفحة
+document.addEventListener("DOMContentLoaded", renderGallery);
 }
     </div>
   `).join('');
