@@ -1083,8 +1083,7 @@ const galleryImages = [
   'https://cdn.phototourl.com/free/2026-06-07-83cb21e8-3234-453b-99cd-b56401d38e29.jpg',
   'https://cdn.phototourl.com/free/2026-06-07-42e820ab-ce1c-43f7-acc1-9ebae1053101.jpg',
   'https://cdn.phototourl.com/free/2026-06-07-82e0c3fc-58f6-443b-b00e-96a3387e03a7.jpg',
-  'https://i.postimg.cc/jSVKWW9b/721369058-778634352002613-6811938577990695561-n.jpg'
-function renderGallery() {
+  function renderGallery() {
   const html = galleryImages.map(src => `
     <div class="gallery-item" onclick="openLightbox('${src}')">
       <img src="${src}" alt="الشهيد فرحات زهير حرارة" loading="lazy" />
